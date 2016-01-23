@@ -1,7 +1,6 @@
 var config = {
   //input 
   entry: "./index.js",
-  //output
   output: {
     //where to put it
     path: "./",

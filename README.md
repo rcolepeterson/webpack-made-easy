@@ -35,8 +35,49 @@ module.exports = config;
 3. You should see a console statmemt printed out in your browser's console panel.
 4. Congratulations you have server running a webpack application!
 
-Part 3 - Dev env. 
-Let's add a folder for coding and a folder to put our built files and assets. 
-It will feel like more a real dev enviorenment. So far everything has been done in the root directory.
+Part 3 - Modules.
+Lets require a module.
 
-Add a app folder.  
+1. Create a file called MyModule.js.
+2. add some code. How about  .... 
+
+module.exports = "This a module.";
+
+3. In index.js, add the following ...
+var myModule = require('./MyModule');
+console.log('myModule', myModule);
+
+4. $ webpack-dev-server.
+5. You should see "This a module." printed out in your browser's console panel.
+6. Congratulations you imported a module. Bad ass!
+
+Part 3.5 Async code loading.
+This is the main reason i wanted to checkout Webpack was to use it to load code asynchronously.
+I wanted to do things like render my initial page and then load JS on demand. 
+This reduces onload page file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
+
+0. add this code to index.js to mimic a user requesting a resource after the site has loaded.
+
+setTimeout(function () {
+	require(['./anotherModule'], function (anotherModule) {
+		console.log('anotherModule', anotherModule);
+	});
+}, 3000)
+
+Note the brackets around file we are requiring. This tells web pack to not include this code our output file. 
+We then supply a call back to we can target the code we just loaded.
+
+1. Create a file called anotherModule.js and add module.exports = "I am testing";
+2. $ webpack-dev-server.
+3. You should see "I am testing." printed out in your browser's console panel after 3 seconds.
+4. congrats. You are loading JS on demand.
+
+
+In the olden times the JS would be included via a script tag in the html.
+But by using webpack's module loading sytem we can now seperate our code and load peices wheneverer we want.
+We can have a smalll file size on load and then fetch more stuff later.
+
+Check out the network tab in your browser's dev tools and you can see your file load after 3 seconds.
+Thta is super cool and awesome!
+
+
