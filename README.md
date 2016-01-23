@@ -34,3 +34,9 @@ module.exports = config;
 2. goto http://localhost:8080/webpack-dev-server/
 3. You should see a console statmemt printed out in your browser's console panel.
 4. Congratulations you have server running a webpack application!
+
+Part 3 - Dev env. 
+Let's add a folder for coding and a folder to put our built files and assets. 
+It will feel like more a real dev enviorenment. So far everything has been done in the root directory.
+
+Add a app folder.  
