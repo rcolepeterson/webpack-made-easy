@@ -52,9 +52,9 @@ console.log('myModule', myModule);
 6. Congratulations you imported a module. Bad ass!
 
 Part 3.5 Async code loading.
-This is the main reason i wanted to checkout Webpack was to use it to load code asynchronously.
+This is the main reason I wanted to checkout Webpack was to use it to load code asynchronously.
 I wanted to do things like render my initial page and then load JS on demand.
-This reduces onload page file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
+This reduces on load page file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
 
 0. add this code to index.js to mimic a user requesting a resource after the site has loaded.
 
@@ -74,8 +74,50 @@ We then supply a call back to we can target the code we just loaded.
 
 
 In the olden times the JS would be included via a script tag in the html.
-But by using webpack's module loading system we can now separate our code and load pieces whenever we want.
+But by using Webpack's module loading system we can now separate our code and load pieces whenever we want.
 We can have a small file size on load and then fetch more stuff later.
 
 Check out the network tab in your browser's dev tools and you can see your file load after 3 seconds.
-Thta is super cool and awesome!
+That is super cool and awesome!
+
+Part 4 - Loaders. Webpack handles tasks via loaders. Stuff like pulling in templates, manipulating images etc., can all be done via loaders. Once the loaders are in place you can require their functionality in your own modules.
+
+For an example let's add some loaders to get and apply CSS and then we will require our CSS in one our JS files.
+1. Install the two loaders: npm install css-loader style-loader --save-dev.
+
+2. Modify your webpack.config.js and add a module > loading section. (Note: you can add this functionality in your each of your modules every time you want it, but that gets old. Let's do it once globally in the config.)
+
+var config = {
+  //input
+  entry: "./index.js",
+  output: {
+    //where to put it
+    path: "./",
+    //what to name it.
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [{
+      // do this only for .css files
+      test: /\.css$/,
+      // Run both style and css loaders. One gets the style the other applies it.
+      loader: 'style!css'
+    }]
+  }
+};
+module.exports = config;
+
+3. Add some text to your index.html file.
+<h1>I am cool</h1>.
+
+Create a CSS file in the root and add a style.
+body{color:red;}
+
+4. Require it in index.js
+require('./style.css');
+
+and if it worked, the text on your webpage should be red. Inspect your web page and you will see a style tag has been inserted into the <head> tag. There are other ways of treating the CSS, but that is outside the scope of this tutorial. :)
+
+Cool. So you can now start thinking about creating modules that provide there own HTML, JS and CSS all through requiring modules.
+
+Also ... there are zillion webpack loaders to checkout.

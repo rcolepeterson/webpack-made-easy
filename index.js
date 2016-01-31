@@ -5,6 +5,8 @@ console.log("we are working!");
 var myModule = require('./myModule');
 console.log('myModule', myModule);
 
+require('./style.css');
+
 //simulate a user gesture after seconds.
 setTimeout(function () {
 	require(['./anotherModule'], function (anotherModule) {
