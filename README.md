@@ -9,17 +9,17 @@ Part 1 - Set up a simple Webpack workflow.
 5. Add console.log("hello") in the index.js
 6. $ webpack index.js bundle.js
 7. You should now see a bundle.js file in your root directory.  
-8. Open your index.html in a browser and you should see a console statmemt printed out in your browerser console panel.
+8. Open your index.html in a browser and you should see a console statement printed out in your browser's console window.
 9. Congratulations you have created a webpack application!
 
 Part 2 - Set up the Web Pack Dev server for your app.
 Webpack comes with a http server that does a bunch of stuff, including reload your page when it detects a change.
 Let's enable by ...
 
-0. Add a webpack.config.js file in your root directory that looks like the folowing ...
+0. Add a webpack.config.js file in your root directory that looks like the following ...
 
 var config = {
-  //input 
+  //input
   entry: "./index.js",
   output: {
     //where to put it
@@ -39,7 +39,7 @@ Part 3 - Modules.
 Lets require a module.
 
 1. Create a file called MyModule.js.
-2. add some code. How about  .... 
+2. add some code. How about  ....
 
 module.exports = "This a module.";
 
@@ -53,7 +53,7 @@ console.log('myModule', myModule);
 
 Part 3.5 Async code loading.
 This is the main reason i wanted to checkout Webpack was to use it to load code asynchronously.
-I wanted to do things like render my initial page and then load JS on demand. 
+I wanted to do things like render my initial page and then load JS on demand.
 This reduces onload page file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
 
 0. add this code to index.js to mimic a user requesting a resource after the site has loaded.
@@ -64,7 +64,7 @@ setTimeout(function () {
 	});
 }, 3000)
 
-Note the brackets around file we are requiring. This tells web pack to not include this code our output file. 
+Note the brackets around file we are requiring. This tells web pack to not include this code our output file.
 We then supply a call back to we can target the code we just loaded.
 
 1. Create a file called anotherModule.js and add module.exports = "I am testing";
@@ -74,10 +74,8 @@ We then supply a call back to we can target the code we just loaded.
 
 
 In the olden times the JS would be included via a script tag in the html.
-But by using webpack's module loading sytem we can now seperate our code and load peices wheneverer we want.
-We can have a smalll file size on load and then fetch more stuff later.
+But by using webpack's module loading system we can now separate our code and load pieces whenever we want.
+We can have a small file size on load and then fetch more stuff later.
 
 Check out the network tab in your browser's dev tools and you can see your file load after 3 seconds.
 Thta is super cool and awesome!
-
-
