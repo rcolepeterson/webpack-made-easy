@@ -47,7 +47,11 @@ module.exports = "This a module.";
 var myModule = require('./MyModule');
 console.log('myModule', myModule);
 
-4. $ webpack-dev-server.
+4. run ...
+
+$ webpack-dev-server
+and go to http://localhost:8080/webpack-dev-server/
+
 5. You should see "This a module." printed out in your browser's console panel.
 6. Congratulations you imported a module. Bad ass!
 
@@ -68,7 +72,10 @@ Note the brackets around file we are requiring. This tells web pack to not inclu
 We then supply a call back to we can target the code we just loaded.
 
 1. Create a file called anotherModule.js and add module.exports = "I am testing";
-2. $ webpack-dev-server.
+2. run ...
+$ webpack-dev-server
+and go to http://localhost:8080/webpack-dev-server/
+
 3. You should see "I am testing." printed out in your browser's console panel after 3 seconds.
 4. congrats. You are loading JS on demand.
 
@@ -116,6 +123,11 @@ body{color:red;}
 4. Require it in index.js
 require('./style.css');
 
+5. run ...
+
+$ webpack-dev-server
+and go to http://localhost:8080/webpack-dev-server/
+
 and if it worked, the text on your webpage should be red. Inspect your web page and you will see a style tag has been inserted into the <head> tag. There are other ways of treating the CSS, but that is outside the scope of this tutorial. :)
 
 Cool. So you can now start thinking about creating modules that provide there own HTML, JS and CSS all through requiring modules.
@@ -123,15 +135,48 @@ Cool. So you can now start thinking about creating modules that provide there ow
 Also ... there are zillion Webpack loaders to checkout.
 
 Part 5 - Coding using es2015.
-Lets add a JS compiler Babel ... via the Babel Webpack loader so that we can code using es2015.
+Lets add a JS compiler called Babel ... via the Babel Webpack loader so that we can code using es2015 in our modules.
 
 1. $ npm install babel-loader babel-core babel-preset-es2015 --save-dev
 (the above loads the babel loader all the dependencies needed for Webpack )
 2. Modify your webpack.config.js adding the babel loader.
 
-3. Write some es6 code and be happy!
+var config = {
+  //input
+  entry: "./index.js",
+  output: {
+    //where to put it
+    path: "./",
+    //what to name it.
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [{
+      // do this for .css files
+      test: /\.css$/,
+      // Run both style and css loaders. One gets the style the other applies it.
+      loader: 'style!css'
+    },
+    {
+      //do this for all the JS files.
+      test: /\.js$/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015']
+      },
+      //don't apply to all the node modules.
+      exclude: ['/node_modules/']
+    }]
+  }
+};
+module.exports = config;
+
+3. Write some es6 code in your JS and be happy!
 [1, 2, 3].map(n => n * 2);
 let cool = "you";
+
+//$ webpack-dev-server
+//and go to http://localhost:8080/webpack-dev-server/
 
 Conclusion: Webpack is bad ass and super cool. The above are just simple examples of what you can do. I was sold when I figured how easy it was to load code at run time.
 
