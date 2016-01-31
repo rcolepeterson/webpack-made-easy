@@ -83,7 +83,7 @@ That is super cool and awesome!
 Part 4 - Loaders. Webpack handles tasks via loaders. Stuff like pulling in templates, manipulating images etc., can all be done via loaders. Once the loaders are in place you can require their functionality in your own modules.
 
 For an example let's add some loaders to get and apply CSS and then we will require our CSS in one our JS files.
-1. Install the two loaders: npm install css-loader style-loader --save-dev.
+1. Install the two loaders: $ npm install css-loader style-loader --save-dev.
 
 2. Modify your webpack.config.js and add a module > loading section. (Note: you can add this functionality in your each of your modules every time you want it, but that gets old. Let's do it once globally in the config.)
 
@@ -120,4 +120,24 @@ and if it worked, the text on your webpage should be red. Inspect your web page 
 
 Cool. So you can now start thinking about creating modules that provide there own HTML, JS and CSS all through requiring modules.
 
-Also ... there are zillion webpack loaders to checkout.
+Also ... there are zillion Webpack loaders to checkout.
+
+Part 5 - Coding using es2015.
+Lets add a JS compiler Babel ... via the Babel Webpack loader so that we can code using es2015.
+
+1. $ npm install babel-loader babel-core babel-preset-es2015 --save-dev
+(the above loads the babel loader all the dependencies needed for Webpack )
+2. Modify your webpack.config.js adding the babel loader.
+
+3. Write some es6 code and be happy!
+[1, 2, 3].map(n => n * 2);
+let cool = "you";
+
+Conclusion: Webpack is bad ass and super cool. The above are just simple examples of what you can do. I was sold when I figured how easy it was to load code at run time.
+
+Next steps might be setting up a real dev environment (get everything off the root, create a deploy folder to stick optimized code, etc).
+
+Here are some links.
+http://webpack.github.io/
+https://github.com/petehunt/webpack-howto
+https://christianalfoni.github.io/react-webpack-cookbook/Loading-CSS.html

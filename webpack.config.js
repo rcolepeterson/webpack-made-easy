@@ -13,6 +13,16 @@ var config = {
       test: /\.css$/,
       // Run both style and css loaders. One gets the style the other applies it.
       loader: 'style!css'
+    },
+    {
+      //do this for all the JS files.
+      test: /\.js$/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015']
+      },
+      //don't apply to all the node modules.
+      exclude: ['/node_modules/']
     }]
   }
 };
