@@ -260,5 +260,6 @@ https://github.com/petehunt/webpack-howto
 
 https://christianalfoni.github.io/react-webpack-cookbook/Loading-CSS.html
 
+Thx
 
 cole.peterson@possible.com
