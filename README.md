@@ -249,9 +249,10 @@ Webpack is bad ass and super cool. The above are just some simple examples of wh
 
 Next steps might be setting up a real dev environment (get everything off the root, create a deploy folder to stick optimized code in, add a loader to optimize images, etc).
 
-I have stuck the above code in a repo [here.](https://github.com/rcolepeterson/webpack-made-easy)
+I have stuck the above code examples in this repo.
 
-Here are some links to get to the next level.
+
+Here are some great links to get you to the next level.
 
 http://webpack.github.io/
 
