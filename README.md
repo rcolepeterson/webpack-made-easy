@@ -1,5 +1,4 @@
 # Webpack and you!
----
 
 I have been playing around with [Webpack](https://webpack.github.io/) and have found it to be bad ass and super awesome. The following are some notes and some simple code that I thought others might find useful when getting started.
 
@@ -235,12 +234,14 @@ module.exports = config;
 
 3. Write some es6 code in your JS.
 ```javascript
-[1, 2, 3].map(n => n * 2);
+let arr = [1, 2, 3].map(n => n * 2);
+console.log('arr', arr);
 let cool = "you";
 $ webpack-dev-server
 ```
 
 and go to http://localhost:8080/webpack-dev-server/
+Check the console to see the ouput. No errors means you are writing some dope es6 code.
 
 Conclusion: Webpack is bad ass and super cool. The above are just some simple examples of what you can do. I was sold when I figured how easy it was to load code on demand at run time.
 
