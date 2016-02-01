@@ -244,11 +244,12 @@ and go to http://localhost:8080/webpack-dev-server/
 
 Check the console to see the output. No errors means you are writing some dope es6 code.
 
-Conclusion: Webpack is bad ass and super cool. The above are just some simple examples of what you can do. I was sold when I figured how easy it was to load code on demand at run time.
+### Conclusion
+Webpack is bad ass and super cool. The above are just some simple examples of what you can do. I was sold when I figured how easy it was to load code on demand at run time. Using require really changes the way you think about coding.
 
 Next steps might be setting up a real dev environment (get everything off the root, create a deploy folder to stick optimized code in, add a loader to optimize images, etc).
 
-I have stuck the above code in a repo [here.](http://github.com/rcolepeterson)
+I have stuck the above code in a repo [here.](https://github.com/rcolepeterson/webpack-made-easy)
 
 Here are some links to get to the next level.
 
