@@ -139,6 +139,7 @@ Check out the network tab in your browser's dev tools and you can see your 2nd f
 Webpack handles tasks via loaders. Stuff like pulling in templates, manipulating images etc., can all be done via loaders. Once the loaders are in place you can require their functionality in your own modules.
 
 For an example let's add some loaders to get and apply CSS and then we will require our CSS in one our JS files.
+
 1. Install the two loaders:
 ```javascript
 $ npm install css-loader style-loader --save-dev.
