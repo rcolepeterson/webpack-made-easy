@@ -77,7 +77,7 @@ Lets require a module.
 ```javascript
 module.exports = "This a module.";
 ```
-3. In index.js, lets load it by adding the following ...
+3. In index.js, let's load it by adding the following ...
 ```javascript
 var myModule = require('./MyModule');
 console.log('myModule', myModule);
@@ -198,7 +198,8 @@ Lets add a JS compiler called Babel ... via the Babel Webpack loader so that we 
 ```javascript
 $ npm install babel-loader babel-core babel-preset-es2015 --save-dev
 ```
-(the above grabs the Babel loader and all the dependencies needed for Webpack and what we are doing.)
+(the above grabs the Babel loader code and all the dependencies needed for Webpack and what we are doing.)
+
 2. Modify your webpack.config.js adding the Babel loader.
 ```javascript
 var config = {
@@ -263,3 +264,5 @@ https://christianalfoni.github.io/react-webpack-cookbook/Loading-CSS.html
 Thx
 
 cole.peterson@possible.com
+
+https://www.possible.com/
