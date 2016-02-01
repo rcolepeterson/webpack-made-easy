@@ -241,7 +241,8 @@ $ webpack-dev-server
 ```
 
 and go to http://localhost:8080/webpack-dev-server/
-Check the console to see the ouput. No errors means you are writing some dope es6 code.
+
+Check the console to see the output. No errors means you are writing some dope es6 code.
 
 Conclusion: Webpack is bad ass and super cool. The above are just some simple examples of what you can do. I was sold when I figured how easy it was to load code on demand at run time.
 
