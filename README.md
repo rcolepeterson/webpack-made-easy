@@ -43,10 +43,15 @@ Congratulations, you have created a Webpack application!
 Check out bundle.js to see the generated code.
 
 ### Part 2 - Set up the Web Pack Dev server for your app.
-Webpack comes with a http server that does a bunch of stuff, including reload your page when it detects a change.
+Webpack has development http server that does a bunch of stuff, including reload your page when it detects a change.
 Let's enable by ...
 
-1. Add a webpack.config.js file in your root directory that looks like the following ...
+1. Get the webpack-dev-server
+```javascript
+npm install webpack-dev-server -g
+```
+
+2. Add a webpack.config.js file in your root directory that looks like the following ...
 
 ```javascript
 var config = {
