@@ -144,7 +144,7 @@ For an example let's add some loaders to get and apply CSS and then we will requ
 ```javascript
 $ npm install css-loader style-loader --save-dev.
 ```
-2. Modify your webpack.config.js and add a module > loading section. (Note: You can add this CSS loading functionality in each of your modules, in the require call, every time you want it, but that gets old. Let's do it once globally in the config.)
+2. Modify your webpack.config.js and add a module > loading section. (Note: Alternatively, you could add this CSS loading functionality in each of your modules, in the require call, every time you want it, but that gets old. Let's do it once globally, for all CSS, in the config.)
 ```javascript
 var config = {
   //input
