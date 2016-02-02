@@ -23,21 +23,21 @@ $ npm install webpack -g
 $ mkdir webpack-tut
 $ cd webpack-tut
 ```
-1. Create an index.js file and an index.html file in your root directory.
-2. Add the following to your index.html file. (bundle.js will be generated later).
+1. Create an empty index.js file, an empty bundle.js file and a index.html file in your root directory.
+2. Add the following to your index.html file.
 
 ```
 <script src="bundle.js"></script>
 ```
 
 3. Add console.log("hello") in the index.js file.
-4. Create the bundle.js file by running with the following command ...
+4. Run the following command ...
 
 ```
 $ webpack index.js bundle.js
 ```
 
-You should now see a bundle.js file in your root directory and if you open your index.html in a browser and you should see a console statement printed out in your browser's console window.
+If you open your index.html in a browser and you should see a console statement printed in your browser's console window.
 
 Congratulations, you have created a Webpack application!
 
@@ -251,8 +251,7 @@ Webpack is bad ass and super cool. The above are just some simple examples of wh
 
 Next steps might be setting up a real dev environment (get everything off the root, create a deploy folder to stick optimized code in, add a loader to optimize images, etc).
 
-I have stuck the above code examples in this repo.
-
+I have stuck the above code examples in this repo. Clone it and npm install and you should be good to go.
 
 Here are some great links to get you to the next level.
 
@@ -260,7 +259,7 @@ http://webpack.github.io/
 
 https://github.com/petehunt/webpack-howto
 
-https://christianalfoni.github.io/react-webpack-cookbook/Loading-CSS.html
+https://christianalfoni.github.io/react-webpack-cookbook/Introduction-to-Webpack.html
 
 Thx
 
