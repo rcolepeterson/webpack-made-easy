@@ -23,7 +23,7 @@ $ npm install webpack -g
 $ mkdir webpack-tut
 $ cd webpack-tut
 ```
-1. Create an empty index.js file, an empty bundle.js file and a index.html file in your root directory.
+1. Create a index.js file, a bundle.js file and a index.html file in your root directory.
 2. Add the following to your index.html file.
 
 ```
@@ -37,9 +37,10 @@ $ cd webpack-tut
 $ webpack index.js bundle.js
 ```
 
-If you open your index.html in a browser and you should see a console statement printed in your browser's console window.
+If you open your index.html in a browser, you should see a console statement printed in your browser's console window.
 
 Congratulations, you have created a Webpack application!
+Check out bundle.js to see the generated code.
 
 ### Part 2 - Set up the Web Pack Dev server for your app.
 Webpack comes with a http server that does a bunch of stuff, including reload your page when it detects a change.
