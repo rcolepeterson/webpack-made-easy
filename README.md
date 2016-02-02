@@ -23,13 +23,13 @@ $ npm install webpack -g
 $ mkdir webpack-tut
 $ cd webpack-tut
 ```
-1. Create a index.js file, a bundle.js file and a index.html file in your root directory.
-2. Add the following to your index.html file.
+* Create a index.js file, a bundle.js file and a index.html file in your root directory.
+* Add the following to your index.html file.
 ```
 <script src="bundle.js"></script>
 ```
-3. Add console.log("hello") in the index.js file.
-4. Run the following command ...
+* Add console.log("hello") in the index.js file.
+* Run the following command ...
 
 ```
 $ webpack index.js bundle.js
@@ -44,11 +44,11 @@ Check out bundle.js to see the generated code.
 Webpack has development http server that does a bunch of stuff, including reload your page when it detects a change.
 Let's enable by ...
 
-1. Get the webpack-dev-server
+* Get the webpack-dev-server
 ```javascript
 npm install webpack-dev-server -g
 ```
-2. Add a webpack.config.js file in your root directory that looks like the following ...
+* Add a webpack.config.js file in your root directory that looks like the following ...
 ```javascript
 var config = {
   //input
@@ -62,28 +62,28 @@ var config = {
 };
 module.exports = config;
 ```
-3. Run the server ...
+* Run the server ...
 ```javascript
 $ webpack-dev-server
 ```
-3. Goto http://localhost:8080/webpack-dev-server/
-4. You should see a console statememt printed out in your browser's console panel.
-5. Congratulations you have server running a webpack application! Make some changes and you see them reflected in the browser.
+* Goto http://localhost:8080/webpack-dev-server/
+* You should see a console statememt printed out in your browser's console panel.
+* Congratulations you have server running a webpack application! Make some changes and you see them reflected in the browser.
 
 ### Part 3 - Modules.
 Let's require a module.
 
-1. Create a file called MyModule.js.
-2. Add some code. How about  ....
+* Create a file called MyModule.js.
+* Add some code. How about  ....
 ```javascript
 module.exports = "This a module.";
 ```
-3. In index.js, let's load it by adding the following ...
+* In index.js, let's load it by adding the following ...
 ```javascript
 var myModule = require('./MyModule');
 console.log('myModule', myModule);
 ```
-4. run ...
+* run ...
 ```javascript
 $ webpack-dev-server
 ```
@@ -97,7 +97,7 @@ This is the main reason I wanted to checkout Webpack. I wanted load code asynchr
 I wanted to do things like render my initial page and then load certain JS only when needed.
 This reduces 'on load' file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
 
-1. Add this code to index.js to mimic a user requesting a resource after the site has loaded.
+* Add this code to index.js to mimic a user requesting a resource after the site has loaded.
 ```javascript
 setTimeout(function () {
 	require(['./anotherModule'], function (anotherModule) {
@@ -111,17 +111,17 @@ We then supply a call back so we can target the code after it loads.
 
 Now let's create a module to load.
 
-2. Create a file called anotherModule.js and add
+* Create a file called anotherModule.js and add
 ```javascript
 module.exports = "I am testing";
 ```
-2. run ...
+* run ...
 ```javascript
 $ webpack-dev-server
 ```
 and go to http://localhost:8080/webpack-dev-server/
-3. You should see "I am testing." printed out in your browser's console panel after 3 seconds.
-4. Congrats. You are loading JS on demand.
+* You should see "I am testing." printed out in your browser's console panel after 3 seconds.
+* Congrats. You are loading JS on demand.
 
 
 In the olden times all the JS would be included via a script tags in the HTML.
@@ -137,11 +137,11 @@ Webpack handles tasks via loaders. Stuff like pulling in templates, manipulating
 
 For an example let's add some loaders to get and apply CSS and then we will require our CSS in one our JS files.
 
-1. Install the two loaders:
+* Install the two loaders:
 ```javascript
 $ npm install css-loader style-loader --save-dev.
 ```
-2. Modify your webpack.config.js and add a module > loading section. (Note: Alternatively, you could add this CSS loading functionality in each of your modules, in the require call, every time you want it, but that gets old. Let's do it once globally, for all CSS, in the config.)
+* Modify your webpack.config.js and add a module > loading section. (Note: Alternatively, you could add this CSS loading functionality in each of your modules, in the require call, every time you want it, but that gets old. Let's do it once globally, for all CSS, in the config.)
 ```javascript
 var config = {
   //input
@@ -164,7 +164,7 @@ var config = {
 module.exports = config;
 ```
 
-3. Add some text to your index.html file.
+* Add some text to your index.html file.
 ```
 <h1>I am cool</h1>.
 ```
@@ -172,11 +172,11 @@ Create a CSS file in the root and add a style.
 ```
 body{color:red;}
 ```
-4. Require it in index.js
+* Require it in index.js
 ```javascript
 require('./style.css');
 ```
-5. run ...
+* run ...
 ```javascript
 $ webpack-dev-server
 ```
@@ -191,14 +191,14 @@ Also ... there are zillion [Webpack loaders](https://webpack.github.io/docs/list
 ### Part 5 - Coding using es2015.
 Lets add a JS compiler called Babel ... via the Babel Webpack loader so that we can code using es2015 in our modules. Babel takes your es2015 code and converts it to es5 so browsers can run it.
 
-1. Install the code via npm.
+* Install the code via npm.
 
 ```javascript
 $ npm install babel-loader babel-core babel-preset-es2015 --save-dev
 ```
 (the above grabs the Babel loader code and all the dependencies needed for Webpack and what we are doing.)
 
-2. Modify your webpack.config.js adding the Babel loader.
+* Modify your webpack.config.js adding the Babel loader.
 ```javascript
 var config = {
   //input
@@ -231,7 +231,7 @@ var config = {
 module.exports = config;
 ```
 
-3. Write some es6 code in your JS.
+* Write some es6 code in your JS.
 ```javascript
 let arr = [1, 2, 3].map(n => n * 2);
 console.log('arr', arr);
