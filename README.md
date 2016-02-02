@@ -68,7 +68,7 @@ $ webpack-dev-server
 ```
 Goto http://localhost:8080/webpack-dev-server/ you should see a console statement printed out in your browser's console panel.
 
-Congratulations you have server running a webpack application! Make some changes and you see them reflected in the browser.
+Congratulations you have a server running a webpack application! Make some changes and you see them reflected in the browser.
 
 ### Part 3 - Modules.
 Let's require a module.
