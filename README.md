@@ -71,7 +71,7 @@ $ webpack-dev-server
 5. Congratulations you have server running a webpack application! Make some changes and you see them reflected in the browser.
 
 ### Part 3 - Modules.
-Lets require a module.
+Let's require a module.
 
 1. Create a file called MyModule.js.
 2. Add some code. How about  ....
@@ -83,7 +83,6 @@ module.exports = "This a module.";
 var myModule = require('./MyModule');
 console.log('myModule', myModule);
 ```
-
 4. run ...
 ```javascript
 $ webpack-dev-server
@@ -99,7 +98,6 @@ I wanted to do things like render my initial page and then load certain JS only 
 This reduces 'on load' file size and supports creating self-contained components, that are responsible for their own HTML, JS, styles and assets.
 
 1. Add this code to index.js to mimic a user requesting a resource after the site has loaded.
-
 ```javascript
 setTimeout(function () {
 	require(['./anotherModule'], function (anotherModule) {
@@ -107,14 +105,13 @@ setTimeout(function () {
 	});
 }, 3000)
 ```
-
 Note the brackets around file we are requiring. This tells web pack to not include this code in our initial bundle.js output file.
 
 We then supply a call back so we can target the code after it loads.
 
-Create a module to load.
+Now let's create a module to load.
 
-1. Create a file called anotherModule.js and add
+2. Create a file called anotherModule.js and add
 ```javascript
 module.exports = "I am testing";
 ```
@@ -123,7 +120,6 @@ module.exports = "I am testing";
 $ webpack-dev-server
 ```
 and go to http://localhost:8080/webpack-dev-server/
-
 3. You should see "I am testing." printed out in your browser's console panel after 3 seconds.
 4. Congrats. You are loading JS on demand.
 
