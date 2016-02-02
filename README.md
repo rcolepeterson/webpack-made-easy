@@ -25,11 +25,9 @@ $ cd webpack-tut
 ```
 1. Create a index.js file, a bundle.js file and a index.html file in your root directory.
 2. Add the following to your index.html file.
-
 ```
 <script src="bundle.js"></script>
 ```
-
 3. Add console.log("hello") in the index.js file.
 4. Run the following command ...
 
@@ -50,9 +48,7 @@ Let's enable by ...
 ```javascript
 npm install webpack-dev-server -g
 ```
-
 2. Add a webpack.config.js file in your root directory that looks like the following ...
-
 ```javascript
 var config = {
   //input
@@ -66,8 +62,7 @@ var config = {
 };
 module.exports = config;
 ```
-
-2. Run the server ...
+3. Run the server ...
 ```javascript
 $ webpack-dev-server
 ```
